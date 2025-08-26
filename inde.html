@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+</div>
+</section>
+
+
+<!-- Dates & Pricing -->
+<section id="dates" class="py-14 bg-white border-t">
+<div class="mx-auto container-tight px-4">
+<h2 class="text-2xl md:text-3xl font-extrabold">Dates & Pricing</h2>
+<div class="mt-6 grid md:grid-cols-3 gap-6">
+<div class="p-6 rounded-2xl border shadow-soft">
+<h3 class="font-semibold">Launch Cohort</h3>
+<p class="text-sm text-gray-700 mt-2">Date: <span class="font-semibold">TBD (2–4 weeks from launch)</span><br/>Format: Lagos (in‑person) + Live Online</p>
+</div>
+<div class="p-6 rounded-2xl border shadow-soft">
+<h3 class="font-semibold">Early‑bird</h3>
+<p class="text-3xl font-extrabold mt-2">₦<span id="price">TBD</span></p>
+<p class="text-sm text-gray-600">Limited seats • Certificate included</p>
+</div>
+<div class="p-6 rounded-2xl border shadow-soft">
+<h3 class="font-semibold">Group/Corporate</h3>
+<p class="text-sm text-gray-700 mt-2">Team bookings available. Custom in‑house sessions on request.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Register -->
+<section id="register" class="py-14">
+<div class="mx-auto container-tight px-4">
+<h2 class="text-2xl md:text-3xl font-extrabold">Register</h2>
+<p class="mt-3 text-gray-700">Fill the form below. You’ll receive an email with details and payment options (Paystack/Flutterwave). You can also <a class="underline font-medium" href="https://wa.me/2348012345678" target="_blank" rel="noopener">chat via WhatsApp</a>.</p>
+<div id="program-context" class="mt-3 text-sm text-gray-600 hidden">You are registering for: <span class="font-semibold" id="selected-program"></span></div>
+<!-- Replace the src with your Google Form or Tally form embed link -->
+<div class="mt-6 aspect-[4/3] w-full bg-white border rounded-2xl overflow-hidden shadow-soft">
+<iframe id="registration-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSAMPLE_FORM_ID/viewform?embedded=true" class="w-full h-full" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+<div class="mt-4 text-sm text-gray-600">Having issues with the form? <a class="underline" href="mailto:training@yourdomain.ng">Email us</a>.</div>
+</div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="py-14">
+<div class="mx-auto container-tight px-4">
+<h2 class="text-2xl md:text-3xl font-extrabold">FAQ</h2>
+<div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+<div class="p-6 rounded-2xl border bg-white shadow-soft">
+<h3 class="font-semibold">Is this beginner‑friendly?</h3>
+<p class="mt-2 text-gray-700">Yes. We start with fundamentals and build up to advanced workflows. No coding required.</p>
+</div>
+<div class="p-6 rounded-2xl border bg-white shadow-soft">
+<h3 class="font-semibold">Do I need paid software?</h3>
+<p class="mt-2 text-gray-700">No. We prioritise free or low‑cost tools (Google Workspace, Power Platform trials, open‑source options). Paid upgrades are optional.</p>
+</div>
+<div class="p-6 rounded-2xl border bg-white shadow-soft">
+<h3 class="font-semibold">How do I pay?</h3>
+<p class="mt-2 text-gray-700">We’ll email a Paystack/Flutterwave link after you register. Corporate invoicing available.</p>
+</div>
+<div class="p-6 rounded-2xl border bg-white shadow-soft">
+<h3 class="font-semibold">Will I get templates?</h3>
+<p class="mt-2 text-gray-700">Yes—proposals, SOPs, checklists, KPI dashboards, and app blueprints you can reuse.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Footer -->
+<footer class="py-10 border-t bg-gray-50">
+<div class="mx-auto container-tight px-4 text-sm text-gray-600">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+<p>© <span id="year"></span> Shina Trainings • Lagos, Nigeria</p>
+<div class="flex gap-4">
+<a href="#programs" class="underline">Programs</a>
+<a href="#register" class="underline">Register</a>
+<a href="mailto:training@yourdomain.ng" class="underline">training@yourdomain.ng</a>
+<a href="https://wa.me/2348012345678" target="_blank" rel="noopener" class="underline">WhatsApp</a>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+// Reflect ?program= in UI
+const params = new URLSearchParams(window.location.search);
+const program = params.get('program');
+if (program) {
+const ctx = document.getElementById('program-context');
+const lbl = document.getElementById('selected-program');
+if (ctx && lbl) { ctx.classList.remove('hidden'); lbl.textContent = decodeURIComponent(program); }
+}
+</script>
+</body>
+</html>
